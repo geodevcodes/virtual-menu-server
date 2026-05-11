@@ -6,7 +6,6 @@ import { AppModule } from './app.module';
 import compression from 'compression';
 import helmet from 'helmet';
 
-
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
 
@@ -14,8 +13,8 @@ async function bootstrap() {
   app.setGlobalPrefix('api/v1');
 
   const options = new DocumentBuilder()
-    .setTitle('Book API')
-    .setDescription('API documentation for Users, Books, and Auth')
+    .setTitle('Virtual Menu API')
+    .setDescription('API documentation for Users, Menus, and Auth')
     .setVersion('1.0')
     .addBearerAuth({ type: 'http', scheme: 'bearer', bearerFormat: 'JWT' })
     .build();

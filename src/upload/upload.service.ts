@@ -35,7 +35,7 @@ export class UploadService {
       };
 
       return this.prisma.upload.create({ data: uploadInfo });
-    } catch (error) {
+    } catch (error: any) {
       this.logger.error('Cloudinary upload failed', error);
       throw new BadRequestException(error.message);
     }
@@ -55,7 +55,7 @@ export class UploadService {
       };
 
       return this.prisma.upload.create({ data: uploadInfo });
-    } catch (error) {
+    } catch (error: any) {
       this.logger.error('S3 upload failed', error);
       throw new BadRequestException(error.message);
     }
@@ -82,7 +82,7 @@ export class UploadService {
       };
 
       return this.prisma.upload.create({ data: uploadInfo });
-    } catch (error) {
+    } catch (error: any) {
       this.logger.error('Web3.Storage upload failed', error);
       throw new BadRequestException(error.message);
     }

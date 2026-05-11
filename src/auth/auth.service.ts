@@ -39,23 +39,23 @@ export class AuthService {
       throw new UnauthorizedException('Invalid credentials');
     }
 
-    if (!user.isEmailVerified) {
-      const existingToken = await this.prisma.verificationToken.findFirst({
-        where: { userId: user.id },
-        orderBy: { createdAt: 'desc' },
-      });
+    // if (!user.isEmailVerified) {
+    //   const existingToken = await this.prisma.verificationToken.findFirst({
+    //     where: { userId: user.id },
+    //     orderBy: { createdAt: 'desc' },
+    //   });
 
-      const now = new Date();
-      const fiveMinutesAgo = new Date(now.getTime() - 5 * 60 * 1000);
+    //   const now = new Date();
+    //   const fiveMinutesAgo = new Date(now.getTime() - 5 * 60 * 1000);
 
-      if (!existingToken || existingToken.createdAt < fiveMinutesAgo) {
-        await this.resendVerificationOtp(user.email);
-      }
+    //   if (!existingToken || existingToken.createdAt < fiveMinutesAgo) {
+    //     await this.resendVerificationOtp(user.email);
+    //   }
 
-      throw new UnauthorizedException(
-        'Email not verified. A verification code has been sent to your email.',
-      );
-    }
+    //   throw new UnauthorizedException(
+    //     'Email not verified. A verification code has been sent to your email.',
+    //   );
+    // }
     const { password: _, ...safeUser } = user;
     return safeUser;
   }

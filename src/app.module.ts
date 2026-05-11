@@ -10,6 +10,7 @@ import appConfig from './config/app.config';
 import { AppService } from './app.service';
 import { UploadModule } from './upload/upload.module';
 import { MenuModule } from './menu/menu.module';
+import { MailModule } from './mail/mail.module';
 
 @Module({
   imports: [
@@ -32,6 +33,7 @@ import { MenuModule } from './menu/menu.module';
     AuthModule,
     UploadModule,
     MenuModule,
+    MailModule,
   ],
   controllers: [AppController],
   providers: [AppService],
