@@ -27,7 +27,7 @@ import { PassportJwtAuthGuard } from 'src/auth/guards/passport-jwt.guard';
 import { Public } from 'src/auth/decorators/public.decorator';
 
 @ApiTags('Users')
-@UseGuards(PassportJwtAuthGuard)
+// @UseGuards(PassportJwtAuthGuard)
 @Controller('users')
 export class UsersController {
   constructor(private readonly usersService: UsersService) {}

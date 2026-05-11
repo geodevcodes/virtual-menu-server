@@ -28,7 +28,7 @@ import { LoginDto } from './dto/login.dto';
 import { Throttle } from '@nestjs/throttler';
 
 @ApiTags('Authentication')
-@UseGuards(PassportJwtAuthGuard)
+// @UseGuards(PassportJwtAuthGuard)
 @Controller('auth')
 export class AuthController {
   constructor(private readonly authService: AuthService) {}
