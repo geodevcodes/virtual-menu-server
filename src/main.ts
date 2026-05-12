@@ -22,7 +22,7 @@ async function bootstrap() {
   SwaggerModule.setup('api', app, document);
 
   app.enableCors();
-  // app.set('trust proxy', 1);
+  app.set('trust proxy', 1);
 
   //Helmet (security headers)
   app.use(

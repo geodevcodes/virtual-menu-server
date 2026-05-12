@@ -28,7 +28,7 @@ import { MenuService } from './menu.service';
 import { CreateMenuDto } from './dto/create-menu.dto';
 import { UpdateMenuDto } from './dto/update-menu.dto';
 import { MenuEntity } from './entities/menu.entity';
-import { PassportJwtAuthGuard } from 'src/auth/guards/passport-jwt.guard';
+import { PassportJwtAuthGuard } from '@/auth/guards/passport-jwt.guard';
 import { memoryStorage } from 'multer';
 
 const fileFilter = (

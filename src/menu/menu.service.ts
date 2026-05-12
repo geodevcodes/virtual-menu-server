@@ -4,10 +4,10 @@ import {
   NotFoundException,
 } from '@nestjs/common';
 import { ObjectId } from 'bson';
-import { PrismaService } from 'src/prisma/prisma.service';
-import { UploadService } from 'src/upload/upload.service';
 import { CreateMenuDto } from './dto/create-menu.dto';
 import { UpdateMenuDto } from './dto/update-menu.dto';
+import { PrismaService } from '@/prisma/prisma.service';
+import { UploadService } from '@/upload/upload.service';
 
 @Injectable()
 export class MenuService {

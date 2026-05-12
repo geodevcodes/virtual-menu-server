@@ -10,22 +10,22 @@ import {
   Param,
 } from '@nestjs/common';
 import { AuthEntity, MessageEntity } from './entities/auth.entity';
-import { UserEntity } from 'src/users/entities/user.entity';
 import {
   ApiBearerAuth,
   ApiOkResponse,
   ApiOperation,
   ApiTags,
 } from '@nestjs/swagger';
-import { Public } from 'src/auth/decorators/public.decorator';
+import { PassportJwtAuthGuard } from './guards/passport-jwt.guard';
 import { ForgotPasswordDto } from './dto/forgot-password.dto';
 import { ResetPasswordDto } from './dto/reset-password.dto';
 import { RefreshTokenDto } from './dto/refresh-token.dto';
-import { PassportJwtAuthGuard } from './guards/passport-jwt.guard';
+import { UserEntity } from '@/users/entities/user.entity';
+import { Public } from './decorators/public.decorator';
 import { ResendOtpDto } from './dto/resend-otp.dto';
+import { Throttle } from '@nestjs/throttler';
 import { AuthService } from './auth.service';
 import { LoginDto } from './dto/login.dto';
-import { Throttle } from '@nestjs/throttler';
 
 @ApiTags('Authentication')
 // @UseGuards(PassportJwtAuthGuard)
@@ -53,6 +53,7 @@ export class AuthController {
   }
 
   @Get('me')
+  @UseGuards(PassportJwtAuthGuard)
   @ApiBearerAuth()
   @ApiOperation({ summary: 'Get currently authenticated user' })
   @ApiOkResponse({ type: UserEntity })

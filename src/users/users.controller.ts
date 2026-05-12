@@ -23,11 +23,11 @@ import {
   ApiParam,
   ApiTags,
 } from '@nestjs/swagger';
-import { PassportJwtAuthGuard } from 'src/auth/guards/passport-jwt.guard';
-import { Public } from 'src/auth/decorators/public.decorator';
+import { Public } from '@/auth/decorators/public.decorator';
+import { PassportJwtAuthGuard } from '@/auth/guards/passport-jwt.guard';
 
 @ApiTags('Users')
-// @UseGuards(PassportJwtAuthGuard)
+@UseGuards(PassportJwtAuthGuard)
 @Controller('users')
 export class UsersController {
   constructor(private readonly usersService: UsersService) {}

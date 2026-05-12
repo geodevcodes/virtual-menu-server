@@ -26,7 +26,7 @@ import {
   ApiQuery,
   ApiTags,
 } from '@nestjs/swagger';
-import { PassportJwtAuthGuard } from 'src/auth/guards/passport-jwt.guard';
+import { PassportJwtAuthGuard } from '@/auth/guards/passport-jwt.guard';
 
 @ApiTags('Books')
 @UseGuards(PassportJwtAuthGuard)
