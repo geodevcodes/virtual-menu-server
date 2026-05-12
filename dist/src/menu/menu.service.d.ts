@@ -1,0 +1,82 @@
+import { CreateMenuDto } from './dto/create-menu.dto';
+import { UpdateMenuDto } from './dto/update-menu.dto';
+import { PrismaService } from '@/prisma/prisma.service';
+import { UploadService } from '@/upload/upload.service';
+export declare class MenuService {
+    private readonly prisma;
+    private readonly uploadService;
+    constructor(prisma: PrismaService, uploadService: UploadService);
+    private validateObjectId;
+    private uploadFileToCloudinary;
+    create(userId: string, dto: CreateMenuDto, files: {
+        foodMenuFile?: Express.Multer.File[];
+        drinkMenuFile?: Express.Multer.File[];
+        spaMenuFile?: Express.Multer.File[];
+        accomodationMenuFile?: Express.Multer.File[];
+        accommodationMenuFile?: Express.Multer.File[];
+    }): Promise<{
+        userId: string;
+        id: string;
+        createdAt: Date;
+        updatedAt: Date;
+        name: string;
+        restaurantReviewUrl: string | null;
+        spaReviewUrl: string | null;
+        accommodationReviewUrl: string | null;
+        foodMenuUrl: string | null;
+        drinkMenuUrl: string | null;
+        spaMenuUrl: string | null;
+        accommodationMenuUrl: string | null;
+        qrCodeUrl: string | null;
+        isActive: boolean;
+    }>;
+    findAll(userId: string): Promise<{
+        userId: string;
+        id: string;
+        createdAt: Date;
+        updatedAt: Date;
+        name: string;
+        restaurantReviewUrl: string | null;
+        spaReviewUrl: string | null;
+        accommodationReviewUrl: string | null;
+        foodMenuUrl: string | null;
+        drinkMenuUrl: string | null;
+        spaMenuUrl: string | null;
+        accommodationMenuUrl: string | null;
+        qrCodeUrl: string | null;
+        isActive: boolean;
+    }[]>;
+    findOne(userId: string, id: string): Promise<{
+        userId: string;
+        id: string;
+        createdAt: Date;
+        updatedAt: Date;
+        name: string;
+        restaurantReviewUrl: string | null;
+        spaReviewUrl: string | null;
+        accommodationReviewUrl: string | null;
+        foodMenuUrl: string | null;
+        drinkMenuUrl: string | null;
+        spaMenuUrl: string | null;
+        accommodationMenuUrl: string | null;
+        qrCodeUrl: string | null;
+        isActive: boolean;
+    }>;
+    update(userId: string, id: string, dto: UpdateMenuDto): Promise<{
+        userId: string;
+        id: string;
+        createdAt: Date;
+        updatedAt: Date;
+        name: string;
+        restaurantReviewUrl: string | null;
+        spaReviewUrl: string | null;
+        accommodationReviewUrl: string | null;
+        foodMenuUrl: string | null;
+        drinkMenuUrl: string | null;
+        spaMenuUrl: string | null;
+        accommodationMenuUrl: string | null;
+        qrCodeUrl: string | null;
+        isActive: boolean;
+    }>;
+    remove(userId: string, id: string): Promise<void>;
+}

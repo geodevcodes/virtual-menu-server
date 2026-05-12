@@ -1,0 +1,29 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = () => ({
+    PORT: process.env.PORT,
+    APP_NAME: process.env.APP_NAME,
+    DATABASE_URL: process.env.DATABASE_URL,
+    JWT_ACCESS_SECRET: process.env.JWT_ACCESS_SECRET,
+    JWT_REFRESH_SECRET: process.env.JWT_REFRESH_SECRET,
+    JWT_ACCESS_EXPIRES_IN: process.env.JWT_ACCESS_EXPIRES_IN,
+    GOOGLE: {
+        GOOGLE_CLIENT_SECRET: process.env.GOOGLE_CLIENT_SECRET,
+        GOOGLE_CLIENT_ID: process.env.GOOGLE_CLIENT_ID,
+        GOOGLE_REDIRECT_URI: process.env.GOOGLE_REDIRECT_URI,
+    },
+    FACEBOOOK: {
+        FACEBOOK_APP_ID: process.env.FACEBOOK_APP_ID,
+        FACEBOOK_APP_SECRET: process.env.FACEBOOK_APP_SECRET,
+    },
+    CLOUDINARY_NAME: process.env.CLOUDINARY_CLOUD_NAME,
+    CLOUDINARY_API_KEY: process.env.CLOUDINARY_API_KEY,
+    CLOUDINARY_API_SECRET: process.env.CLOUDINARY_API_SECRET,
+    WEB3_STORAGE_API_KEY: process.env.WEB3_STORAGE_API_KEY,
+    AWS_S3_BUCKET_NAME: process.env.AWS_S3_BUCKET_NAME,
+    AWS_S3_ACCESS_KEY_ID: process.env.AWS_S3_ACCESS_KEY_ID,
+    AWS_S3_SECRET_ACCESS_KEY: process.env.AWS_S3_SECRET_ACCESS_KEY,
+    PAYSTACK_TEST_SECRET_KEY: process.env.PAYSTACK_TEST_SECRET_KEY,
+    PAYSTACK_TEST_PUBLIC_KEY: process.env.PAYSTACK_TEST_PUBLIC_KEY,
+});
+//# sourceMappingURL=app.config.js.map
