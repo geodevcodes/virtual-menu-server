@@ -52,6 +52,6 @@ async function bootstrap() {
   );
 
   console.log(`🚀 Listening on port http://localhost:${process.env.PORT}`);
-  await app.listen(process.env.PORT ?? 8081);
+  await app.listen(process.env.PORT ?? 3000);
 }
 bootstrap();
